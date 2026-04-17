@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>2048 Arena</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <script src="sound.js" defer></script>
+    <script src="script.js" defer></script>
+    <script src="achievements.js" defer></script>
+</head>
+<body>
+    <!-- Futuristic Scanlines -->
+    <div class="scanlines"></div>
+
+    <!-- Background Animated Orbs -->
+    <div class="bg-orb orb-1"></div>
+    <div class="bg-orb orb-2"></div>
+    <div class="bg-orb orb-3"></div>
+
+    <!-- Toast Notification Container -->
+    <div id="toast-container"></div>
+
+    <div class="app-container">
+        <!-- Main Menu -->
+        <section id="menu-screen" class="screen active">
+            <h1 class="neon-title">2048 <span>ARENA</span></h1>
+            <div class="welcome-banner">
+                Welcome to the Arena
+            </div>
+            <div class="menu-buttons">
+                <button id="btn-play" class="glow-on-hover menu-btn">▶ PLAY</button>
+                <button id="btn-achievements" class="menu-btn">🏅 ACHIEVEMENTS</button>
+                <button id="btn-settings" class="menu-btn">⚙️ SETTINGS</button>
+                <button id="btn-credits" class="menu-btn">📝 CREDITS</button>
+            </div>
+        </section>
+
+        <!-- Game Screen -->
+        <section id="game-screen" class="screen">
+            <header class="game-header">
+                <div class="scores">
+                    <div class="score-box">SCORE <br> <span id="current-score">0</span></div>
+                    <div class="score-box">BEST <br> <span id="best-score">0</span></div>
+                </div>
+                <div class="game-controls">
+                    <button id="btn-menu" class="icon-btn">⬅</button>
+                    <button id="btn-restart" class="icon-btn">↺</button>
+                </div>
+            </header>
+            
+            <div class="game-board-container">
+                <div id="game-board">
+                    <!-- Grid cells will be generated via JS -->
+                </div>
+                
+                <div id="game-over-modal" class="modal hidden">
+                    <div class="modal-content">
+                        <h2>GAME OVER</h2>
+                        <p>Score: <span id="final-score">0</span></p>
+                        <button id="btn-try-again" class="glow-on-hover">TRY AGAIN</button>
+                        <button id="btn-back-menu">MAIN MENU</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Achievements Screen -->
+        <section id="achievements-screen" class="screen">
+            <header class="top-nav">
+                <button class="icon-btn back-btn">⬅</button>
+                <h2>ACHIEVEMENTS</h2>
+            </header>
+            
+            <div class="achievements-grid" id="achievements-list">
+                <!-- Populated by JS -->
+            </div>
+        </section>
+
+        <!-- Settings Screen -->
+        <section id="settings-screen" class="screen">
+            <header class="top-nav">
+                <button class="icon-btn back-btn">⬅</button>
+                <h2>SETTINGS</h2>
+            </header>
+            
+            <div class="profile-card" style="text-align: left;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                    <span style="font-size: 1.2rem; font-weight: 600;">Sound Effects</span>
+                    <button id="btn-toggle-sound" class="glow-on-hover" style="width: auto; padding: 10px 20px; font-size: 1rem;">ON</button>
+                </div>
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                    <span style="margin-top: 10px; font-size: 0.9rem; color: #aaa;">Clear all locally saved progress and achievements.</span>
+                </div>
+                <button id="btn-reset-data" class="menu-btn danger" style="text-align: center; padding-left: 0;">CLEAR DATA</button>
+            </div>
+        </section>
+
+        <!-- Credits Screen -->
+        <section id="credits-screen" class="screen">
+            <header class="top-nav">
+                <button class="icon-btn back-btn">⬅</button>
+                <h2>CREDITS</h2>
+            </header>
+            
+            <div class="profile-card">
+                <h3 class="neon-text" style="color: var(--accent-neon); margin-bottom: 10px;">2048 ARENA</h3>
+                <p style="margin-bottom: 20px;">A modern twist on a classic puzzle game.</p>
+                
+                <h4 style="color: var(--accent-dark); margin-bottom: 5px;">Created By</h4>
+                <p style="margin-bottom: 20px;">Rahul</p>
+                
+                <h4 style="color: var(--accent-dark); margin-bottom: 5px;">Assets & Sound</h4>
+                <p style="margin-bottom: 20px;">Generated via Web Audio API & Pure CSS</p>
+
+                <p style="font-size: 0.8rem; color: #777;">Version 1.0.0</p>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
